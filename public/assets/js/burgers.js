@@ -1,6 +1,8 @@
 //Wrap everything inside a function to make sure we wait until the DOM is fully loaded
 $( () => {
   $(".devourBurger").click( event => {
+      console.log(`The devour it button was clicked....`);
+      console.log(`This data-devoured is ${$(this).data("devoured")} inside the devourBurger click function.`);
       let id = $(this).data("id");
       let devouredState = $(this).data("devoured");
 
@@ -26,8 +28,10 @@ $( () => {
       event.preventDefault();
 
       let newBurger = {
-          burger_name: $("#burger_name").val().trim(),
+          burger_name: $("#name").val().trim(),
+          devoured: 0
       };
+      console.log(`The newBurger inside addBurger - ${JSON.stringify(newBurger)}`);
 
       // Sent the POST request
       $.ajax("/api/burgers", {
@@ -43,6 +47,8 @@ $( () => {
   });
 
   $(".deleteBurger").click( () => {
+      console.log(`The delete button was clicked....`);
+      console.log(`This data-id is ${$(this).data("id")} inside the delete click function.`);
       let id = $(this).data("id");
 
       // Send the DELETE request
