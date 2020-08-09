@@ -1,0 +1,42 @@
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerMargin {
+  line-height: 75px;
+}
+
+.subtitleMargin {
+  line-height: 35px;
+}
+
+.mainMargin {
+  margin-bottom: 75px;
+}
+
+.contentMargin {
+  margin-bottom: 50px;
+}
+
+.tileWidth {
+  min-width: 33.3%;
+}
+.panelBg {
+  /*background-color: hsl(0, 0%, 96%);*/
+  background-color: lightyellow;
+}
+
+button {
+  margin:0 auto;
+  display: block;
+}
+
+li {
+  font-size: 1.5rem;
+}
+
+.devourBurger {
+  margin-left: 15px;
+}

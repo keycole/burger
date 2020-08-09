@@ -1,0 +1,68 @@
+<div class="container is-fluid">
+    <section class="hero is-medium is-success is-bold">
+        <div class="hero-body">
+            <div class="is-success has-text-centered ">
+                <figure class="image is-128x128 is-inline-block">
+                    <img class="is-rounded"
+                        src="/assets/images/veggieBurger_pexels-grooveland-designs-3607284.jpg">
+                </figure>
+            </div>
+            <div class="container mainMargin">
+                <h1 class="title centered headerMargin">
+                    Eat Da Veggie Burger
+                </h1>
+                <h2 class="subtitle centered subtitleMargin">
+                    Make a list of the veggie burgers you would like to eat...<br>
+                    and mark them as DEVOURED after you have satisfied your craving.
+                </h2>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile centered contentMargin" id="waitList">
+                    <article class="panel is-warning">
+                        <p class="panel-heading">
+                            WISH LIST
+                        </p>
+                        <ul> 
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                {{> burgers/burger-block devoured=false}}
+                            {{/unless}}
+                        {{/each}}
+                        </ul>
+                    </article>
+                </div>
+                <div class="tile centered contentMargin" id="devoured">
+                    <article class="panel is-warning">
+                        <p class="panel-heading">
+                            DEVOURED!
+                        </p>
+                        <ul>
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                {{> burgers/burger-block devoured=true}}
+                            {{/if}}
+                        {{/each}}
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <div class="field create-form">
+                <div class="control contentMargin">
+                    <input class="input is-warning centered" id="burger_name" type="text" placeholder="Add a veggie burger">
+                </div>
+            </div>
+            <div class="is-success has-text-centered ">
+                <button class="button is-warning is-rounded" id="addBurger" type="submit"><i class="fas fa-plus"></i>
+                &nbsp;&nbsp;<strong>ADD IT</strong>&nbsp;&nbsp;<i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            &hearts;&nbsp;No animals were harmed in the creation of this site.&nbsp;&hearts;</a>.
+        </p>
+    </div>
+</footer>

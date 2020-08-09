@@ -7,23 +7,24 @@ router.get('/', (req, res) => {
         let hbsObject = {
             burgers: data
         };
-        console.log(`The hbsObject inside burgers_controller selectAll = ${hbsObject}`);
+        console.log(`The hbsObject inside burgers_controller selectAll = ${JSON.stringify(hbsObject)}`);
         res.render('index', hbsObject);
     });
 });
 
-router.post('api/burgers', (res, req) => {
+router.post('/api/burgers', (res, req) => {
+    console.log(`The req.body inside POST = ${req.body}`);
     burger.insertOne([
         'burger_name'
     ], [
-        req.body.name
+        req.body.burger_name
     ], result => {
         //Send back the id of the new burger
         res.json({ id: result.insertId });
     });
 });
 
-router.put('api/burgers/:id', (req, res) => {
+router.put('/api/burgers/:id', (req, res) => {
     let condition = 'id = ' + req.params.id;
 
     console.log(`The condition inside burgers_controller updateOne = ${condition}`);
