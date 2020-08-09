@@ -2,12 +2,12 @@
 $( () => {
   $(".devourBurger").click( event => {
       console.log(`The devour it button was clicked....`);
-      console.log(`This data-devoured is ${$(this).data("devoured")} inside the devourBurger click function.`);
+      console.log(`This data-devoured is ${$(this).data("devouredstate")} inside the devourBurger click function.`);
       let id = $(this).data("id");
-      let devouredState = $(this).data("devoured");
+      let devouredState = $(this).data("devouredstate");
 
       let newDevouredState = {
-          devoured: devouredState
+          devoured : devouredState
       };
 
       // Send the PUT request
@@ -16,20 +16,19 @@ $( () => {
           data: newDevouredState
       }).then(
           () => {
-              console.log(`Devoured was changed to ${devouredState}`);
+              console.log(`Devoured was changed to ${devoured}`);
               //Reload the page to rebuild the updated list
               location.reload();
           }
       );
   });
 
-  $("#addBurger").click( () => {
+  $("#addBurger").click( event => {
       console.log(`The add it button was clicked....`)
       event.preventDefault();
 
       let newBurger = {
-          burger_name: $("#name").val().trim(),
-          devoured: 0
+          burger_name: $("#name").val().trim()
       };
       console.log(`The newBurger inside addBurger - ${JSON.stringify(newBurger)}`);
 

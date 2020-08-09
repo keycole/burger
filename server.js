@@ -1,17 +1,17 @@
 const express = require('express');
 
 const PORT = process.env.PORT || 8080;
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.static('public'));
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
+//app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json
-app.use(bodyParser.json())
+//app.use(bodyParser.json())
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const exphbs = require('express-handlebars');
 

@@ -3,6 +3,8 @@ const router = express.Router();
 const burger = require('../models/burger.js');
 
 router.get('/', (req, res) => {
+    console.log(`The req inside burgers controller get = ${req}`);
+
     burger.selectAll( data => {
         let hbsObject = {
             burgers: data
@@ -12,7 +14,8 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/api/burgers', (res, req) => {
+router.post('/api/burgers', (req, res) => {
+    console.log(`The res inside burgers_controller.js = ${res}`);
     console.log(`The req.body inside POST = ${req.body}`);
     burger.insertOne([
         'burger_name'
@@ -25,6 +28,7 @@ router.post('/api/burgers', (res, req) => {
 });
 
 router.put('/api/burgers/:id', (req, res) => {
+    console.log(`The req.params.id inside burgers controller = ${req.params.id}`);
     let condition = 'id = ' + req.params.id;
 
     console.log(`The condition inside burgers_controller updateOne = ${condition}`);

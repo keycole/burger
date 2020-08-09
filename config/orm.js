@@ -1,5 +1,5 @@
 //Import the MYSQL connection from connection.js
-const connection = require('./connection.js');
+const connection = require('../config/connection.js');
 
 //Set up the helper functions for MYSQL syntax
 const printQuestionMarks = (num) => {
@@ -8,11 +8,12 @@ const printQuestionMarks = (num) => {
     for(let i = 0; i < num; i ++) {
         arr.push('?');
     }
-
+    console.log(`The printQuestionMarks arr inside the orm file = ${arr}`);
     return arr.toString();
 };
 
 const objToSql = (ob) => {
+    console.log(`The ob inside objToSequel = ${JSON.stringify(ob)}`);
     let arr = [];
 
     for(let key in ob) {
@@ -20,15 +21,18 @@ const objToSql = (ob) => {
             if(typeof value === 'string' && value.indexOf(' ') >= 0) {
                 value = '"' + value + '"';
             }
-            arr.push(key + '=' + value);
+            arr.push(key + ' = ' + value);
         }
     }
+    console.log(`The objToSql arr in the orm file = ${arr}`);
     return arr.toString();
 };
 
 const orm = {
     selectAll: (tableInput, cb) => {
         let queryString = 'SELECT * FROM ' + tableInput + ';';
+        console.log(`The queryString inside orm seletAll = ${queryString}`);
+
         connection.query(queryString, (err,result) => {
             if(err){
                 throw err;

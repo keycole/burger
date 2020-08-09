@@ -2,9 +2,9 @@
     <span class="panel-icon"><i class="fas fa-hamburger" aria-hidden="true"></i></span>
     {{burger_name}}
         {{#if devoured}}
-        <button class="button is-danger is-rounded deleteBurger" data-id={{id}} data-devouredState={{devoured}}>&nbsp;&nbsp;<strong>DELETE IT</strong>&nbsp;&nbsp;</button>
+        <button class="button is-danger is-rounded deleteBurger" data-id={{id}} data-devouredstate={{devoured}}>&nbsp;&nbsp;<strong>DELETE IT</strong>&nbsp;&nbsp;</button>
         {{else}}
-        <button class="button is-success is-rounded devourBurger" data-id={{id}} data-devouredState={{devoured}}>
+        <button class="button is-success is-rounded devourBurger" data-id={{id}} data-devouredstate={{devoured}}>
         <i class="fas fa-utensils"></i>&nbsp;&nbsp;<strong>DEVOUR IT</strong>&nbsp;&nbsp;<i class="fas fa-utensils"></i>
         </button>
         {{/if}}   
