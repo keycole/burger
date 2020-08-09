@@ -1,16 +1,11 @@
 <li class="panel-block panelBg">
-    <span class="panel-icon">
-        <i class="fas fa-hamburger" aria-hidden="true"></i>
-    </span>
+    <span class="panel-icon"><i class="fas fa-hamburger" aria-hidden="true"></i></span>
     {{burger_name}}
-    <button class="button is-success is-rounded devourBurger" data-id={{id}} data-newBurger={{id}}>
         {{#if devoured}}
-        <button class="button is-danger is-rounded deleteBurger" data-id={{id}}>
-        &nbsp;&nbsp;<strong>DELETE IT</strong>&nbsp;&nbsp;
-         {{else}}
-        <i class="fas fa-utensils"></i>
-        &nbsp;&nbsp;<strong>DEVOUR IT</strong>&nbsp;&nbsp;
-        <i class="fas fa-utensils"></i>
-        {{/if}}
-    </button>
+        <button class="button is-danger is-rounded deleteBurger" data-id={{id}}>&nbsp;&nbsp;<strong>DELETE IT</strong>&nbsp;&nbsp;</button>
+        {{else}}
+        <button class="button is-success is-rounded devourBurger" data-id={{id}} data-newBurger={{newBurger}}>
+        <i class="fas fa-utensils"></i>&nbsp;&nbsp;<strong>DEVOUR IT</strong>&nbsp;&nbsp;<i class="fas fa-utensils"></i>
+        </button>
+        {{/if}}   
 </li>

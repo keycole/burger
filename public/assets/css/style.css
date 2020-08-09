@@ -40,3 +40,19 @@ li {
 .devourBurger {
   margin-left: 15px;
 }
+
+.deleteBurger {
+  margin-left: 15px;
+}
+
+#waitList{
+  margin-right: 15px;
+}
+
+#devoured {
+  margin-left: 15px;
+}
+
+.notDevoured {
+  margin-right: 20px;
+}
