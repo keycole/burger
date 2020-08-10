@@ -1,36 +1,28 @@
-let orm = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
-let burger = {
-    selectAll: (cb) => {
-        orm.selectAll(`burgers`, res => {
-            console.log(`The res inside burger model selectAll = ${JSON.stringify(res)}`);
-            cb(res);
-        });
-    },
-
-    //The cols and vals parameters are arrays
-    insertOne: (cols, vals, cb) => {
-        orm.insertOne(`burgers`, cols, vals, res => {
-            console.log(`The res inside burger model insertOne = ${JSON.stringify(res)}`);
-            cb(res);
-        });
-    },
-
-    updateOne: (objColVals, condition, cb) => {
-        console.log(`The objColVals inside model burger.js = ${JSON.stringify(objColVals)}`);
-        orm.updateOne(`burgers`, objColVals, condition, res => {
-            console.log(`The res inside burger model updateOne = ${JSON.stringify(res)}`);
-            cb(res);
-        });
-    },
-
-    deleteOne: (condition, cb) => {
-        orm.deleteOne(`burgers`, condition, res => {
-            console.log(`The res inside burger model updateOne = ${JSON.stringify(res)}`);
-            cb(res);
-        });
-    }
+const burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res) {
+      cb(res);
+    });
+  },
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+  update: function(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
+  delete: function(condition, cb) {
+    orm.delete("burgers", condition, function(res) {
+      cb(res);
+    });
+  }
 };
 
-//Export the database functions for use in the controller (burgers_controller.js)
+// Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;

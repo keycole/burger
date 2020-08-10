@@ -1,4 +1,4 @@
-//Set up the MYSQL connection
+// Set up MySQL connection.
 const mysql = require("mysql");
 
 let connection;
@@ -15,15 +15,14 @@ if(process.env.JAWSDB_URL) {
       });
 };
 
-//Make the connection
-connection.connect( (err) => {
-    console.log(`Entering the connect function in connection.js`);
-    if(err){
-        console.error(`There was an error connecting: ${err.stack}`);
+// Make connection.
+connection.connect(function (err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
         return;
     }
-    console.log(`Connected as id: ${connection.threadId}`);
+    console.log("connected as id " + connection.threadId);
 });
 
-//Export connection to the orm file
+// Export connection for our ORM to use.
 module.exports = connection;
