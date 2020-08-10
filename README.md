@@ -8,11 +8,16 @@ A whimsical app that allows you to log veggie burgers that you would like to eat
 
 **Heroku Link:** https://veggie-burger-nom-nom.herokuapp.com/
 
-
 ## Table of Contents
 
-[Installation](#installation) &nbsp;&nbsp; | &nbsp;&nbsp; [Usage](#usage) &nbsp;&nbsp; | &nbsp;&nbsp; [Contributing](#contributing) &nbsp;&nbsp; | &nbsp;&nbsp; [License](#license) &nbsp;&nbsp; |  &nbsp;&nbsp; [Questions](#questions)
+[Demo](#demo) &nbsp;&nbsp;| &nbsp;&nbsp; [Installation](#installation) &nbsp;&nbsp; | &nbsp;&nbsp; [Usage](#usage) &nbsp;&nbsp; | &nbsp;&nbsp; [Contributing](#contributing) &nbsp;&nbsp; | &nbsp;&nbsp; [License](#license) &nbsp;&nbsp; |  &nbsp;&nbsp; [Questions](#questions)
 
+
+## Demo
+**Link to demo video:** https://drive.google.com/file/d/11QvLGt5T2t9Z2hc-nrBzSv3ZeI6nvRWA/view
+
+
+![Demo GIF](public/assets/images/demo.gif)
 
 ## Installation
 - Fork or clone the repository 
