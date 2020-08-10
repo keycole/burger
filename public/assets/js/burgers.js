@@ -2,21 +2,22 @@
 $( () => {
   $(".devourBurger").click( event => {
       console.log(`The devour it button was clicked....`);
-      console.log(`This data-devoured is ${$(this).data("devouredstate")} inside the devourBurger click function.`);
-      let id = $(this).data("id");
-      let devouredState = $(this).data("devouredstate");
+      console.log(`This data-id = ${$(this).data("id")}`);
+      const id = $(this).data("id");
+      
+      console.log(`The id = ${id}`);
 
-      let newDevouredState = {
-          devoured : devouredState
+      const newDevouredState = {
+          devoured: "true"
       };
 
+      console.log(`The newDevouredState = ${JSON.stringify(newDevouredState)}`);
       // Send the PUT request
       $.ajax("/api/burgers/" + id, {
           type: "PUT",
           data: newDevouredState
-      }).then(
-          () => {
-              console.log(`Devoured was changed to ${devoured}`);
+      }).then( () => {
+              console.log(`Devoured was changed to ${newDevouredState}`);
               //Reload the page to rebuild the updated list
               location.reload();
           }
@@ -48,7 +49,7 @@ $( () => {
   $(".deleteBurger").click( () => {
       console.log(`The delete button was clicked....`);
       console.log(`This data-id is ${$(this).data("id")} inside the delete click function.`);
-      let id = $(this).data("id");
+      const id = $(this).data("id");
 
       // Send the DELETE request
       $.ajax("/api/burgers/" + id, {

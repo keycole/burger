@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const burger = require('../models/burger.js');
+const burger = require("../models/burger.js");
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
     console.log(`The req inside burgers controller get = ${req}`);
 
     burger.selectAll( data => {
@@ -10,15 +10,15 @@ router.get('/', (req, res) => {
             burgers: data
         };
         console.log(`The hbsObject inside burgers_controller selectAll = ${JSON.stringify(hbsObject)}`);
-        res.render('index', hbsObject);
+        res.render("index", hbsObject);
     });
 });
 
-router.post('/api/burgers', (req, res) => {
+router.post("/api/burgers", (req, res) => {
     console.log(`The res inside burgers_controller.js = ${res}`);
     console.log(`The req.body inside POST = ${req.body}`);
     burger.insertOne([
-        'burger_name'
+        "burger_name"
     ], [
         req.body.burger_name
     ], result => {
@@ -27,14 +27,15 @@ router.post('/api/burgers', (req, res) => {
     });
 });
 
-router.put('/api/burgers/:id', (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
+    console.log(`The req.params = ${req.params}`);
     console.log(`The req.params.id inside burgers controller = ${req.params.id}`);
-    let condition = 'id = ' + req.params.id;
+    let condition = "id = " + req.params.id;
 
     console.log(`The condition inside burgers_controller updateOne = ${condition}`);
 
     burger.updateOne({
-        devoured: req.body.devoured
+        devoured: "true"
     }, condition, result => {
         if(result.changedRows == 0) {
             return res.status(404).end();
@@ -44,8 +45,8 @@ router.put('/api/burgers/:id', (req, res) => {
     });
 });
 
-router.delete('/api/burgers/:id', (req, res) => {
-    let condition = 'id = ' + req.params.id;
+router.delete("/api/burgers/:id", (req, res) => {
+    let condition = "id = " + req.params.id;
 
     burger.deleteOne(condition, result => {
         if(result.changedRows == 0) {

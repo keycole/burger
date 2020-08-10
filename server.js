@@ -1,26 +1,23 @@
-const express = require('express');
+const express = require("express");
+require("dotenv").config();
 
-const PORT = process.env.PORT || 8080;
-//var bodyParser = require('body-parser');
+const PORT = process.env.PORT || 8081;
+
 const app = express();
 
-app.use(express.static('public'));
-// parse application/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({ extended: true }))
-// parse application/json
-//app.use(bodyParser.json())
+app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const exphbs = require('express-handlebars');
+const exphbs = require("express-handlebars");
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-const route = require('./controllers/burgers_controller.js');
+const routes = require("./controllers/burgers_controller.js");
 
-app.use(route);
+app.use(routes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on: http://localhost:${PORT}`);

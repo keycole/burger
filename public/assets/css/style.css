@@ -34,15 +34,17 @@ button {
 }
 
 li {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .devourBurger {
   margin-left: 15px;
+  font-size: 1rem;
 }
 
 .deleteBurger {
   margin-left: 15px;
+  font-size: 1rem;
 }
 
 #waitList{

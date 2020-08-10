@@ -1,8 +1,8 @@
-const orm = require('../config/orm.js');
+let orm = require("../config/orm.js");
 
-const burger = {
+let burger = {
     selectAll: (cb) => {
-        orm.selectAll(`burgers`, (res) => {
+        orm.selectAll(`burgers`, res => {
             console.log(`The res inside burger model selectAll = ${JSON.stringify(res)}`);
             cb(res);
         });
@@ -10,7 +10,7 @@ const burger = {
 
     //The cols and vals parameters are arrays
     insertOne: (cols, vals, cb) => {
-        orm.insertOne(`burgers`, cols, vals, (res) => {
+        orm.insertOne(`burgers`, cols, vals, res => {
             console.log(`The res inside burger model insertOne = ${JSON.stringify(res)}`);
             cb(res);
         });
@@ -18,14 +18,14 @@ const burger = {
 
     updateOne: (objColVals, condition, cb) => {
         console.log(`The objColVals inside model burger.js = ${JSON.stringify(objColVals)}`);
-        orm.updateOne(`burgers`, objColVals, condition, (res) => {
+        orm.updateOne(`burgers`, objColVals, condition, res => {
             console.log(`The res inside burger model updateOne = ${JSON.stringify(res)}`);
             cb(res);
         });
     },
 
     deleteOne: (condition, cb) => {
-        orm.deleteOne(`burgers`, condition, (res) => {
+        orm.deleteOne(`burgers`, condition, res => {
             console.log(`The res inside burger model updateOne = ${JSON.stringify(res)}`);
             cb(res);
         });
