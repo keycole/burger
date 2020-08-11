@@ -24,7 +24,7 @@ A whimsical app that allows you to log veggie burgers that you would like to eat
 - Navigate to the folder containing the repository and enter ```npm i``` into the command line to install dependencies
 - Create a .env file with your own passwords and information
 - Create your database and tables in MySQL using the employeeDBSeed file or your own data.
-- To start the CLI, enter ```node server.js``` into the command line to launch the application
+- To start the app, enter ```node server.js``` into the command line and navigate to the local host URL that is logged in the command line.
 
 ## Usage
 - This is a fun little app to keep track of the veggie burgers (or meat of your choice, depending on preference...) you would like to chomp on.
